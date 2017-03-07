@@ -21,6 +21,7 @@ function incrementCount(){
                 var response = JSON.parse(responseAsJSON);
                 clicks = response['count'];
                 document.querySelector("#counter").innerText = "Count is " + clicks;
+                return clicks;
             }.toString()
         };
         bridge.postMessage(message);

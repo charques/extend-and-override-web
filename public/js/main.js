@@ -14,13 +14,15 @@ function getBridge() {
 
 function incrementCount(){
     var bridge = getBridge();
+    var test = 'hola';
+
 
     if (bridge) {
         var message = {
             "cmd": "increment", "count": clicks, "callbackFunc": function (responseAsJSON) {
                 var response = JSON.parse(responseAsJSON);
                 clicks = response['count'];
-                document.querySelector("#counter").innerText = "Count is " + clicks;
+                document.querySelector("#counter").innerText = "Count is " + clicks + ' ' + test;
                 return clicks;
             }.toString()
         };
